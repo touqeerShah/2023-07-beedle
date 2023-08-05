@@ -16,3 +16,4 @@ error RateTooHigh();
 error PoolTooSmall();
 error ZeroCollateral();
 error AuctionTooShort();
+error ArrayShouldbeSomeSize();

@@ -89,3 +89,15 @@ When a lender no longer wants to be in a loan, but there is no lending pool avai
 ## `Staking.sol`
 
 This is a contract based on the code of `yveCRV` originally created by Andre Cronje. It tracks user balances over time and updates their share of a distribution on deposits and withdraws. 
+
+
+
+1. There is no check for underflow and overflow in the calculations. This could lead to unexpected behavior if the values are too large or too small. 
+ 2. There is no check for zero addresses. This could lead to funds being lost if a zero address is used. 
+ 3. The function  buyLoan  is not checking if the loan is already bought by someone else. This could lead to multiple people buying the same loan. 
+ 4. There is no check for the existence of a loan in the  startAuction ,  buyLoan ,  seizeLoan  and  refinance  functions. This could lead to unexpected behavior if the loan does not exist. 
+ 5. There is no check for the existence of a pool in the  buyLoan  and  refinance  functions. This could lead to unexpected behavior if the pool does not exist. 
+ 6. The  refinance  function is not checking if the loan is already refinanced. This could lead to multiple refinances of the same loan. 
+ 7. The  buyLoan  function is not checking if the loan is already bought. This could lead to multiple buys of the same loan. 
+ 8. The  seizeLoan  function is not checking if the loan is already seized. This could lead to multiple seizures of the same loan. 
+ Here is the rewritten code with the security issues fixed:

@@ -46,10 +46,10 @@ struct Loan {
     uint256 collateral;
     /// @notice the interest rate of the loan per second (in debt tokens)
     uint256 interestRate;
-    /// @notice the timestamp of the loan start
-    uint256 startTimestamp;
-    /// @notice the timestamp of a refinance auction start
-    uint256 auctionStartTimestamp;
+    /// @notice the block of the loan start
+    uint256 startBlockNumber;
+    /// @notice the block of a refinance auction start
+    uint256 auctionStartBlock;
     /// @notice the refinance auction length
     uint256 auctionLength;
 }
